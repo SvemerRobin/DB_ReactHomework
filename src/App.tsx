@@ -1,8 +1,8 @@
 import React from 'react';
 import {
-  BrowserRouter as Router,
   Switch,
   Route,
+  HashRouter,
 } from "react-router-dom";
 import Menu from './components/Menu';
 import Details from './pages/Details';
@@ -12,14 +12,14 @@ function App() {
   return (
     <div className="container">
       <Menu/>
-      <Router>
+      <HashRouter>
         <Switch>
-          <Route exact path="/">
+          <Route path="./">
             <Home />
           </Route>
-          <Route path="/details/:id" children={<Details />} />
+          <Route path="./details/:id" children={<Details />} />
         </Switch>
-      </Router>
+      </HashRouter>
     </div>
   );
 }
